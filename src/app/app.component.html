@@ -1,14 +1,12 @@
-<h1>Работа с Angular</h1>
-
+<h1>ToDoList</h1>
+<div>
+  <span class="title">Task number:{{i}}</span>
+</div>
+<div *ngFor="let task of tasks">
+  <h3>Name: {{task.name}} </h3>
+  <div>Done: {{task.done}}<input type="checkbox"></div>
+</div>
 <form action="">
-<input type="text" name="title">
-<button>Добавить новое задание</button>
+  <input type="text" placeholder="Add Task">
+  <button (click)="addTask()">Добавить новое задание</button>
 </form>
-
-<ul>
-  <li>
-    <input type="checkbox" name="isCompleted">
-    <span>Что нужно сделать?</span>
-    
-  </li>
-</ul>
