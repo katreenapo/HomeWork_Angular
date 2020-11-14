@@ -127,5 +127,8 @@
       }
     }
   },
-  "defaultProject": "HomeW"
+  "defaultProject": "HomeW",
+  "cli": {
+    "analytics": "3815659c-903a-4040-a024-60d94dfe92ae"
+  }
 }
