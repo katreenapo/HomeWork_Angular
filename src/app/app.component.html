@@ -1,15 +1,19 @@
 <div *ngFor="let task of tasks" class="container">
   <h1>ToDoList</h1>
-   <h3>{{task.number}}</h3>
-   <p>{{task.name}}</p>
-   <ul>
-  <li>
-   <input type="checkbox" name="isCompleted">
-    <span>В работе</span>
-  </li>
-  <li>
-   <input type="checkbox" name="isCompleted">
-   <span><del>Задание выполнено</del></span>
-  </li>
-</ul>
+  <h2>{{task.number}}</h2>
+  <p>{{task.name}}</p>
+  <ul>
+    <li>
+      <input type="radio" checked name="isCompleted"/> 
+      <span>В работе</span>
+    </li>
+    <li>
+      <input type="radio" checked name="isCompleted"/>
+      <span><del>Задание выполнено</del></span>
+    </li>
+  </ul>
+
+
+
+
 </div>
