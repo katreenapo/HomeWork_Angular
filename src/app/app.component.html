@@ -1,10 +1,15 @@
-<div class="container">
+<div *ngFor="let task of tasks" class="container">
   <h1>ToDoList</h1>
-  <form class="form" action="">
-
-    <input type="text" class="form-control" placeholder="Новое задание">
-    <button (click)="addToList()"  class="btn btn-outline-secondary" type="button">Добавить новое задание</button>
-
-<button  type="button" class="btn btn-outline-secondary">Удалить</button>
-</form>
+   <h3>{{task.number}}</h3>
+   <p>{{task.name}}</p>
+   <ul>
+  <li>
+   <input type="checkbox" name="isCompleted">
+    <span>В работе</span>
+  </li>
+  <li>
+   <input type="checkbox" name="isCompleted">
+   <span><del>Задание выполнено</del></span>
+  </li>
+</ul>
 </div>

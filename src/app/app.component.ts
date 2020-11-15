@@ -6,16 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'HomeW';
-  items = [];
-  newTask = ''; 
- addToList() {
-    if (this.newTask == '') {
-    }
-    else {
-      this.items.push(this.newTask);
-      this.newTask = '';
-    }
-  }
+  tasks = [ {
+    name: 'Завдання Angular Вступ',
+    number: 'Task 1',
+    isDone: true,
+  }]
   
 }
