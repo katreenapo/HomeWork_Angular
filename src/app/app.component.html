@@ -1,17 +1,19 @@
+<h1>ToDoList</h1>
 <div *ngFor="let task of tasks" class="container">
-  <h1>ToDoList</h1>
+
   <h2>{{task.number}}</h2>
   <p>{{task.name}}</p>
   <ul>
     <li>
-      <input type="radio" checked name="isCompleted"/> 
+      <input type="radio" checked name="isCompleted" />
       <span>В работе</span>
     </li>
     <li>
-      <input type="radio" checked name="isCompleted"/>
+      <input type="radio" checked name="isCompleted" />
       <span><del>Задание выполнено</del></span>
     </li>
   </ul>
+  <button (click)="addTask()">Добавить задание</button>
 
 
 
