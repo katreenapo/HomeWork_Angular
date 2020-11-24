@@ -6,13 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  tasks = [{
-    name: 'Завдання Angular Вступ',
-    number: 'Task 1',
-    isDone: true,
+    task: Task[] =[{
+    id:1,
+    name: 'task 2',
+    status: true,
   }]
   addTask() {
-    this.tasks.push({
+    this.task.push({
       name: 'Завдання 2',
       number: 'Task 2',
       isDone: true,
