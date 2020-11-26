@@ -1,49 +1,16 @@
 <div id="app" class="container list-grid-demo">
   <div class="well well-sm">
     <strong>Display</strong>
-    <div >
-      <button (click)="changeView('list')" id="list" class="btn btn-default btn-sm">
-        List</button>
-      <button (click)="changeView('grid')" id="grid" class="btn btn-default btn-sm">
-        Grid</button>
+    <div class="btn-group">
+      <a id="list" class="btn btn-default btn-sm" (click)="changeView('list')"><span class="glyphicon glyphicon-th-list">
+        </span>List</a>
+      <a id="grid" class="btn btn-default btn-sm" (click)="changeView('grid')"><span class="glyphicon glyphicon-th"></span>Grid</a>
     </div>
   </div>
 
 
-  <div id="products" :class="groupWrapper" class="row"[ngClass]="viewText">
-    <div class="item  col-xs-4 col-lg-4" >
-      <div class="thumbnail clearfix">
-        <img src="http://placehold.it/400x250/000/fff" alt="" />
-        <div class="caption">
-          <h4 class="h3 ">
-            Product title</h4>
-          <p class="caption-text">
-            Product description...</p>
-          <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo eligendi possimus fugit laudantium
-            cupiditate quidem aut nisi et, obcaecati, iste quis ducimus ad minus laborum optio? Aperiam nobis voluptatum
-            totam.</div>
-          <div class="price-buy-spacing">
-            <div class="lead"> $21.000</div>
-            <button>Add to Cart</button>
-          </div>
-        </div>
-      </div>
+  <div id="products" class="row">
+    <div class="item" [ngClass]="view === 'list' ? 'col-12' : 'col-xs-4 col-lg-4'" *ngFor="let product of products">
+      <app-product [product]="product" [ngClass]="view"></app-product>
     </div>
-    <div class="item  col-xs-4 col-lg-4">
-      <div class="thumbnail clearfix">
-        <img src="http://placehold.it/400x250/000/fff" alt="" />
-        <div class="caption">
-          <h4 class="h3 ">
-            Product title 1</h4>
-          <p class="caption-text">
-            Product description...1</p>
-          <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo eligendi possimus fugit laudantium
-            cupiditate quidem aut nisi et, obcaecati, iste quis ducimus ad minus laborum optio? Aperiam nobis voluptatum
-            totam.</div>
-          <div class="price-buy-spacing">
-            <div class="lead"> $21.000</div>
-            <button>Add to Cart</button>
-          </div>
-        </div>
-      </div>
-    </div>
+  </div>
