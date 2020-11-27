@@ -1,7 +1,7 @@
 <h1>ToDoList</h1>
 <div *ngFor="let task of tasks" class="container">
 
-  <h2>{{task.number}}</h2>
+  <h2>{{task.id}}</h2>
   <p>{{task.name}}</p>
   <ul>
     <li>
@@ -14,7 +14,7 @@
     </li>
   </ul>
   <button (click)="addTask()">Добавить задание</button>
-<app-new-list></app-new-list>
+  <app-new-list></app-new-list>
 
 
 

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Task } from './new-list.model';
 
 @Component({
   selector: 'app-root',
@@ -6,16 +7,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-    task: Task[] =[{
-    id:1,
+  task: Task[] = [{
+    id: 1,
     name: 'task 2',
     status: true,
   }]
   addTask() {
     this.task.push({
-      name: 'Завдання 2',
-      number: 'Task 2',
-      isDone: true,
+      id: 2,
+      name: 'task 3',
+      status: true,
     })
   }
 }
