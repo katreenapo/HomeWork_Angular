@@ -7,6 +7,8 @@ import { Product } from './user.model';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+
+  
   sortOrign = 'desc';
   products: Product[] = [{
     id: 1,
