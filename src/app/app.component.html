@@ -1,16 +1,23 @@
 <div id="app" class="container list-grid-demo">
   <div class="well well-sm">
+    <p>{{total}}</p>
     <strong>Display</strong>
     <div class="btn-group">
-      <a id="list" class="btn btn-default btn-sm" (click)="changeView('list')"><span class="glyphicon glyphicon-th-list">
+      <a id="list" class="btn btn-default btn-sm" (click)="changeView('list')"><span
+          class="glyphicon glyphicon-th-list">
         </span>List</a>
-      <a id="grid" class="btn btn-default btn-sm" (click)="changeView('grid')"><span class="glyphicon glyphicon-th"></span>Grid</a>
+      <a id="grid" class="btn btn-default btn-sm" (click)="changeView('grid')"><span
+          class="glyphicon glyphicon-th"></span>Grid</a>
     </div>
   </div>
-
-
+  <div *ngFor="let product of items; let i=index;" class="item-cart" >
+    <p>{{product.name}}</p>
+    <p>{{product.desc | slice: 0:10}}... </p>
+    <p>{{product.price | currency}}</p>
+    <button (click)="deleteProduct(i)">delete</button>
+  </div>
   <div id="products" class="row">
     <div class="item" [ngClass]="view === 'list' ? 'col-12' : 'col-xs-4 col-lg-4'" *ngFor="let product of products">
-      <app-product [product]="product" [ngClass]="view"></app-product>
+      <app-product [product]="product" (onButton)="addToCart($event)" [ngClass]="view"></app-product>
     </div>
   </div>

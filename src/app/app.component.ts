@@ -9,6 +9,8 @@ import { Product } from './product.model';
 export class AppComponent {
 
   view: string = 'grid';
+  total: number = 0;
+  items: Product[] =[];
 
   products: Product[] = [{
     name: 'Product title 1',
@@ -23,4 +25,22 @@ export class AppComponent {
   changeView(view: string) {
     this.view = view;
   }
+  addToCart(product: Product) {
+    console.log(product);
+    this.items.push(product);
+    this.totalCart();
+  }
+  totalCart() {
+    let total= 0;
+    this.items.forEach((product) => {
+    total += product.price;
+
+    });
+    this.total = total;
+  }
+  deleteProduct(i) {
+    this.items.splice(i, 1);
+    this.totalCart();
+  }
 }
+
