@@ -8,7 +8,7 @@ import { Product } from './user.model';
 })
 export class AppComponent {
 
-  
+  name = '';
   sortOrign = 'desc';
   products: Product[] = [{
     id: 1,
