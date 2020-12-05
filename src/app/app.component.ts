@@ -7,9 +7,14 @@ import { Product } from './user.model';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-
+newProduct = {
+  id: '',
+  name : '',
+  price: ''
+}
   name = '';
   sortOrign = 'desc';
+  
   products: Product[] = [{
     id: 1,
     name: 'Product 1',
@@ -25,8 +30,13 @@ export class AppComponent {
   }]
   sortClick() {
     this.sortOrign = this.sortOrign === 'asc' ? 'desc' : 'asc';
-
   }
+  sendProduct() {
+    console.log(this.newProduct);
+   
+    this.products.push(this.newProduct);
+  }
+
 }
 
 
