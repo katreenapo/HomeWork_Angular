@@ -1,4 +1,4 @@
-<form (ngSubmit)="sendProduct()">
+<form (ngSubmit)="sendProduct()"></form>
 <h2>Product list</h2>
 <div class="form-row form-group">
     <div class="col">
@@ -28,12 +28,12 @@
       <th></th>
     </tr>
   </thead>
-  <tbody *ngFor="let product of products | sort : sortOrign | search : name">
+  <tbody *ngFor="let product of products | sort : sortOrign | search : name let i=index" >
     <tr>
       <th scope="row">{{product.id}}</th>
       <td>{{product.name}}</td>
       <td>{{product.price | currency}}</td>
-
+      <button (click)="deleteProduct(i)">x</button>
     </tr>
   </tbody>
   <tfoot>
@@ -43,4 +43,3 @@
     <td></td>
   </tfoot>
 </table>
-</form>

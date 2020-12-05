@@ -7,14 +7,15 @@ import { Product } from './user.model';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-newProduct = {
-  id: '',
-  name : '',
-  price: ''
-}
+  total: number = 0;
+  newProduct = {
+    id: '',
+    name: '',
+    price: ''
+  }
   name = '';
   sortOrign = 'desc';
-  
+
   products: Product[] = [{
     id: 1,
     name: 'Product 1',
@@ -33,10 +34,17 @@ newProduct = {
   }
   sendProduct() {
     console.log(this.newProduct);
-   
     this.products.push(this.newProduct);
   }
-
+  deleteProduct(i: number) {
+    this.products.splice(i, 1);
+  }
+totalCart() {
+  let total = 0;
+  this.products.forEach((product) => {
+  total = product.price;
+  });
+  this.total = total;
 }
-
-
+  
+}
