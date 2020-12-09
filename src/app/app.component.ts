@@ -6,13 +6,14 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  
   formType: string = 'registration';
   
   login = {
-    userName: '',
-    password: ''
+  email: '',
+  password: ''
   }
+
+  
   sendProduct() {
     console.log(this.login);
     

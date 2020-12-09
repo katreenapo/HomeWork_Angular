@@ -4,4 +4,5 @@
     <button type="button" class="btn ml-3" [ngClass]="{'btn-primary': formType == 'registration'}"
         (click)="changeForm('registration')">Registration</button>
 </div>
-<app-form></app-form>
+
+<app-form [formType]="formType"></app-form>

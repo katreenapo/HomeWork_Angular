@@ -7,7 +7,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./form.component.scss']
 })
 export class FormComponent implements OnInit {
-@Output () 
+@Input() formType;
+@Input() login;
   formRegister: FormGroup;
   show = true;
 
@@ -21,17 +22,11 @@ export class FormComponent implements OnInit {
       fullName: ['', [Validators.required]],
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.maxLength(10), Validators.pattern("^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$")]],
-      confirmPass: ['', [Validators.required, Validators.maxLength(10), Validators.pattern("^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$")]]
+      confirmPassword: ['', [Validators.required, Validators.maxLength(10), Validators.pattern("^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$")]]
 
     });
   }
-  formType: string = 'registration';
-
-  login = {
-    email: '',
-    password: ''
-  }
-
+    
   get f() {
     return this.formRegister.controls;
   }

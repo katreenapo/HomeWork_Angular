@@ -2,7 +2,7 @@
     <div class="form-group">
         <div class="input-group">
             <input type="email" name="email" class="form-control" placeholder="Email" required="required"
-                [(ngModel)]="login.email" email #email="ngModel">
+                [(ngModel)]="login.email">
         </div>
         <ng-container *ngIf="email.errors && (email.dirty || email.touched)">
             <div class="alert alert-danger" *ngIf="email.errors.required">Email is required</div>
