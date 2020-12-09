@@ -1,3 +1,4 @@
+import { StringMap } from '@angular/compiler/src/compiler_facade_interface';
 import { Component, Input } from '@angular/core';
 
 @Component({
@@ -10,7 +11,7 @@ export class AppComponent {
   
   login = {
   email: '',
-  password: ''
+  password: '',
   }
 
   
