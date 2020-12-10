@@ -1,4 +1,4 @@
-import { Component,  Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -7,9 +7,12 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./form.component.scss']
 })
 export class FormComponent implements OnInit {
-@Input() formType: string;
-@Input() login: string;
-@Input() onRegistration: any;
+  @Input() formType: string;
+ 
+  login = {
+    email: '',
+    password: '',
+  }
 
 
   formRegister: FormGroup;
@@ -24,15 +27,21 @@ export class FormComponent implements OnInit {
       userName: ['', [Validators.required]],
       fullName: ['', [Validators.required]],
       email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.maxLength(10), Validators.pattern("^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$")]],
-      confirmPassword: ['', [Validators.required, Validators.maxLength(10), Validators.pattern("^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$")]]
+      password: ['', [Validators.required, Validators.maxLength(8), Validators.pattern("^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$")]],
+      confirmPassword: ['', [Validators.required, Validators.maxLength(8), Validators.pattern("^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$")]]
 
     });
   }
-    
+
   get f() {
     return this.formRegister.controls;
   }
+  onLogin() {
+    console.log(this.login);
+  }
 
+  onRegistration() {
+
+  }
 
 }

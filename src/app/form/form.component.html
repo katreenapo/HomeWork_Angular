@@ -2,9 +2,9 @@
     <div class="form-group">
         <div class="input-group">
             <input type="email" name="email" class="form-control" placeholder="Email" required="required"
-                [(ngModel)]="login.email">
+                [(ngModel)]="login.email" #email="ngModel">
         </div>
-        <ng-container *ngIf="email.errors && (email.dirty || email.touched)">
+        <ng-container *ngIf="email.errors && (email.dirty || email.touched)" >
             <div class="alert alert-danger" *ngIf="email.errors.required">Email is required</div>
             <div class="alert alert-danger" *ngIf="email.errors.email">Email not corect</div>
         </ng-container>
@@ -71,7 +71,7 @@
                 formControlName="confirmPassword">
         </div>
         <ng-container *ngIf="f.confirmPassword.errors && (f.confirmPassword.dirty || f.confirmPassword.touched)">
-            <div class="alert alert-danger" *ngIf="f.confirmPassword.errors.required">Email is required</div>
+            <div class="alert alert-danger" *ngIf="f.confirmPassword.errors.required">Passwords is required</div>
             <div class="alert alert-danger" *ngIf="f.confirmPassword.errors.mismatch">Passwords must match</div>
         </ng-container>
         <div class="alert alert-danger" *ngIf="formRegister.errors?.notSame">Passwords must match</div>
