@@ -6,4 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  task = '';
+  tasks =[];
+
+    addTask() {
+      console.log(this.tasks.push(this.task));
+  
+
+  }
 }
