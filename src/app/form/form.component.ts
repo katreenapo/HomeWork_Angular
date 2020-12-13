@@ -27,20 +27,27 @@ export class FormComponent implements OnInit {
       userName: ['', [Validators.required]],
       fullName: ['', [Validators.required]],
       email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.maxLength(8), Validators.pattern("^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$")]],
-      confirmPassword: ['', [Validators.required, Validators.maxLength(8), Validators.pattern("^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$")]]
-
-    });
+      password: ['', [Validators.required, Validators.maxLength(8)]],
+      confirmPassword: ['', [Validators.required, Validators.maxLength(8)]]
+    
+    }, this.pwdMatchValidator);
   }
 
   get f() {
     return this.formRegister.controls;
   }
+  pwdMatchValidator(group: FormGroup) {
+    let pass = group.get('password').value;
+    let confirmPass = group.get('confirmPassword').value;
+
+    return pass === confirmPass ? null : { notSame: true } 
+ }
   onLogin() {
     console.log(this.login);
   }
 
   onRegistration() {
+    
 
   }
 
