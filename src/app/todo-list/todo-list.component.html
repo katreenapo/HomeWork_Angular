@@ -16,17 +16,17 @@
         <div class="col-3 d-none col-md-3 d-md-block"></div>
     </div>
     <div *ngFor="let x of items; let index = index;" class="row mt-1">
-        <div class="col-3 d-none col-md-3 d-md-block"></div>
-        <div [ngClass]="{'not-done': !taskIsDone}"
-            class="col-12 col-md-6 bg-secondary d-flex justify-content-center align-items-center text-light">
-            <div class="col-9 text-light">{{x}}</div>
+        <div class="col-3 d-none col-md-3 d-md-block">
+        </div>
+        <div class="col-12 col-md-6 bg-secondary d-flex justify-content-center align-items-center text-light">
+            <input click="successful()" type="checkbox" [(ngModel)]="taskIsDone"> 
+            <div class="col-9 text-light" [ngClass]="{'checked': taskIsDone}">{{x}}</div>
 
             <input (click)="deleteTask(index)" type="button" value="Delete" class="col-2 btn">
 
         </div>
         <div class="col-3 d-none col-md-3 d-md-block">
-            <label>
-                <input click="successful()" type="checkbox"> This task is completed! </label>
+
         </div>
     </div>
 </div>
