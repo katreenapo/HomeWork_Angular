@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class TodoListComponent implements OnInit {
   items: string[] = [];
   newTask: string;
-  taskIsDone = false;
+  taskIsDone: boolean;
 
 
 
@@ -18,11 +18,15 @@ export class TodoListComponent implements OnInit {
     else {
       this.items.push(this.newTask);
       this.newTask = '';
-      
+      this.taskIsDone = false;
+      }
+      console.log(this.items);
     }
-  }
+    taskStatus() {
+      this.taskIsDone != this.taskIsDone;
+    }
 
-  deleteTask(index) {
+  deleteTask(index: number) {
     this.items.splice(index, 1);
   }
 
@@ -30,7 +34,7 @@ export class TodoListComponent implements OnInit {
     
   }
 
-  constructor() { }
+  constructor() {  }
 
   ngOnInit(): void {
   }
