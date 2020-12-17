@@ -9,11 +9,13 @@ const routes: Routes = [{
 }, {
   path: 'post', component: PostComponent
 }, {
+  path: 'blog', component: BlogComponent
+}, {
+  path: 'blog/:id', component: PostComponent
+},  {
   path: '**', component: HomeComponent
 }, {
   path: '', component: HomeComponent
-}, {
-  path: 'blog', component: BlogComponent
 }
 ];
 

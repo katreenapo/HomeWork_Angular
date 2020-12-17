@@ -15,4 +15,9 @@ export class DataService {
   getAllPosts(): Observable<Post[]> {
     return this.http.get<Post[]>('https://jsonplaceholder.typicode.com/todos');
   }
+
+  getPostById(id:number) {
+    return this.http.get<Post>(`https://jsonplaceholder.typicode.com/todos/${id}`);
+
+  }
 }
