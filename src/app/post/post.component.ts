@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Data } from '@angular/router';
+import { ActivatedRoute, Data, Router } from '@angular/router';
 import { DataService } from '../data.service';
 import { Post } from '../post.model';
 
@@ -14,7 +14,8 @@ export class PostComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private dataService: DataService
+    private dataService: DataService,
+    private  router: Router,
   ) { }
 
   ngOnInit(): void {
@@ -24,5 +25,8 @@ export class PostComponent implements OnInit {
       this.post = res;
     })
   }
+  backTo() {
+    this.router.navigate(['blog']);
+  }
+  }
 
-}
