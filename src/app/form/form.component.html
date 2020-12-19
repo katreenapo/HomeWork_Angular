@@ -1,0 +1,21 @@
+<div class="container">
+<form [formGroup]="searchForm" (ngSubmit)="searchByKeys()">
+
+    <mat-form-field class="example-form-field">
+        <mat-label>Name</mat-label>
+        <input matInput type="text">
+        <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+            <mat-icon>close</mat-icon>
+        </button>
+    </mat-form-field>
+    <mat-radio-group aria-label="Select an option"class="radio">
+        <mat-radio-button value="1">Male</mat-radio-button>
+        <mat-radio-button value="2">Female</mat-radio-button>
+    </mat-radio-group>
+    <mat-form-field appearance="fill">
+        <mat-label>Write your comment</mat-label>
+        <textarea matInput></textarea>
+    </mat-form-field>
+    <button mat-stroked-button color="accent" (click)="sendForm()">Send</button>
+</form>
+</div>
