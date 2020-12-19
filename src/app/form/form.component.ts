@@ -8,19 +8,21 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class FormComponent implements OnInit {
 
-  searchForm: FormGroup;
+  commentForm: FormGroup;
   constructor(
     private fb: FormBuilder
   ) { }
 
   ngOnInit(): void {
-    this.searchForm = this.fb.group({
-      search: ['', Validators.required]
+    this.commentForm = this.fb.group({
+      name: ['',[ Validators.required]],
+      gender: ['', [Validators.required, Validators.minLength(5)]],
+      comment: ['', [Validators.required, Validators.minLength(5)]],
     });
   }
 
-  searchByKeys() {
-    console.log(this.searchForm.value);
+  formInformation() {
+    console.log(this.commentForm.value);
 
   }
 
