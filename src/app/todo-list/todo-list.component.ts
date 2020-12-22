@@ -6,11 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./todo-list.component.scss']
 })
 export class TodoListComponent implements OnInit {
+
+  
+  constructor() {  }
   items: string[] = [];
   newTask: string;
-  taskIsDone: boolean;
-
-
+  taskIsDone = false;
 
   addToList() {
     if (this.newTask == '') {
@@ -20,7 +21,7 @@ export class TodoListComponent implements OnInit {
       this.newTask = '';
       this.taskIsDone = false;
       }
-      console.log(this.items);
+      console.log(this.newTask);
     }
     taskStatus() {
       this.taskIsDone != this.taskIsDone;
@@ -33,8 +34,6 @@ export class TodoListComponent implements OnInit {
   successful() {
     
   }
-
-  constructor() {  }
 
   ngOnInit(): void {
   }

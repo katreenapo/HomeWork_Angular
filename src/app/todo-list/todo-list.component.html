@@ -9,7 +9,7 @@
     <div class="row mt-1">
         <div class="col-3 d-none col-md-3 d-md-block">
             <div class="col-1"></div>
-            <button (click)="allTasks()" class="btn btn-secondary text-light"> All tasks</button>
+            <button class="btn btn-secondary text-light"> All tasks</button>
         </div>
         <div class="col-12 col-md-6 bg-muted d-flex justify-content-center align-items-center text-light">
             <input [(ngModel)]="newTask" type="text" value="" class="col-7 form-control" style="width:300px;">
@@ -23,8 +23,8 @@
         <div class="col-3 d-none col-md-3 d-md-block">
         </div>
         <div class="col-12 col-md-6 bg-secondary d-flex justify-content-center align-items-center text-light">
-            <input type="checkbox" (click)="taskStatus(status)">
-            <div class="col-9 text-light" [ngClass]="{'not-done': items.taskIsDone}">{{x}}</div>
+            <input type="checkbox">
+            <div class="col-9 text-light" [ngClass]="{'not-done': taskIsDone}">{{x}}</div>
 
             <input (click)="deleteTask(index)" type="button" value="Delete" class="col-2 btn">
 
