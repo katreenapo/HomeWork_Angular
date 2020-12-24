@@ -28,7 +28,7 @@ export class TodoSingleComponent implements OnInit {
     })
   }
   allTodos() {
-    this.router.navigate(['todo-item']);
+    this.router.navigate(['todo']);
   }
 }
   

@@ -1,7 +1,10 @@
-<div class="container" *ngIf="todo">
+<div class="container" *ngIf="todo; else loading" >
     <h2>{{todo.name}}</h2>
+    <p>{{todo.description}}</p>
     <p>{{todo.description}}</p>
 </div>
 <button class="btn" (click)="allTodos()">
     Back
 </button>
+
+
