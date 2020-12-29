@@ -24,7 +24,7 @@
         </div>
         <div class="col-12 col-md-6 bg-secondary d-flex justify-content-center align-items-center text-light">
             <input type="checkbox">
-            <div class="col-9 text-light" [ngClass]="{'not-done': taskIsDone}">{{x}}</div>
+            <div class="col-9 text-light" [ngClass]="{'not-done': taskIsDone}">{{items.name}}</div>
 
             <input (click)="deleteTask(index)" type="button" value="Delete" class="col-2 btn">
 

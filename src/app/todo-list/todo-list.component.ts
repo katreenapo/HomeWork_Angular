@@ -9,7 +9,7 @@ export class TodoListComponent implements OnInit {
 
   
   constructor() {  }
-  items: string[] = [];
+  items: any[] = [];
   newTask: string;
   taskIsDone = false;
 
@@ -17,11 +17,13 @@ export class TodoListComponent implements OnInit {
     if (this.newTask == '') {
     }
     else {
-      this.items.push(this.newTask);
+      this.items.push({name:this.newTask,
+        taskIsDone: false
+      });
       this.newTask = '';
       this.taskIsDone = false;
       }
-      console.log(this.newTask);
+      console.log(this.items);
     }
     taskStatus() {
       this.taskIsDone != this.taskIsDone;
