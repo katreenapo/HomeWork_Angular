@@ -18,12 +18,15 @@ getAllTodo (): Observable<Todo[]>{
     
   }
 
-  getPostById(id:number) {
-    return this.http.get<Todo>(`https://5fe21a3b7a94870017682086.mockapi.io/Todo/${id}`);
+getTodoById(id:number) {
+  return this.http.get<Todo>(`https://5fe21a3b7a94870017682086.mockapi.io/Todo/${id}`);
 
 }
 addNewTodo(todo: Todo): Observable<any> {
   return this.http.post(this.urlAPI, todo);
+}
+deleteTodo(id: number): Observable<any>{
+  return this.http.delete<Todo>(`https://5fe21a3b7a94870017682086.mockapi.io/Todo/${id}`);
 }
 }
 

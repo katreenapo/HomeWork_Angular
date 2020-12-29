@@ -21,5 +21,5 @@ export class TodoListComponent implements OnInit {
     console.log(res)
     });
   }
-
+  
 }

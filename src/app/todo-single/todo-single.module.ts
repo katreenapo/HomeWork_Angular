@@ -5,7 +5,9 @@ import { TodoSingleRoutingModule } from './todo-single-routing.module';
 import { TodoSingleComponent } from './todo-single/todo-single.component';
 import { FormsModule } from '@angular/forms';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
-import {Component} from '@angular/core';
+import {MatFormFieldModule} from '@angular/material/form-field';
+
+
 
 
 
@@ -17,7 +19,8 @@ import {Component} from '@angular/core';
     TodoSingleRoutingModule,
     FormsModule,
     MatProgressBarModule,
-    Component
+    MatFormFieldModule
+    
   ]
 })
 export class TodoSingleModule { }

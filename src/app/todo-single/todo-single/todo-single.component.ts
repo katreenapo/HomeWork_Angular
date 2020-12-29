@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Todo } from 'src/app/shared/models/service/todo.model';
+import { Priority, Todo } from 'src/app/shared/models/service/todo.model';
 import { DataService } from 'src/app/shared/services/data.service';
 
 @Component({
@@ -10,7 +10,8 @@ import { DataService } from 'src/app/shared/services/data.service';
 })
 export class TodoSingleComponent implements OnInit {
 
-  todo: Todo
+  todo: Todo;
+  readonly Priority = Priority;
 
   constructor(
     private route: ActivatedRoute,
@@ -23,7 +24,7 @@ export class TodoSingleComponent implements OnInit {
   ngOnInit(): void {
     const id = +this.route.snapshot.paramMap.get('id');
     console.log(id);
-    this.dataService.getPostById(id).subscribe((res: Todo)=>{
+    this.dataService.getTodoById(id).subscribe((res: Todo)=>{
       this.todo = res;
     })
   }

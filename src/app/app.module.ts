@@ -8,6 +8,7 @@ import {HttpClientModule} from '@angular/common/http'
 import { FormsModule } from '@angular/forms';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
+import { HeaderComponent } from './shared/header/header.component';
 
 
 
@@ -16,6 +17,7 @@ import {MatIconModule} from '@angular/material/icon';
 @NgModule({
   declarations: [
     AppComponent,
+    HeaderComponent,
     
   ],
   imports: [
