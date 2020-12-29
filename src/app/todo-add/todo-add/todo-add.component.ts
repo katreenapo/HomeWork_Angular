@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Form, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { DataService } from 'src/app/shared/services/data.service';
 
 @Component({
   selector: 'app-todo-add',
@@ -8,9 +9,11 @@ import { Form, FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class TodoAddComponent implements OnInit {
   newTodo: FormGroup;
+  minDate = new Date();
 
   constructor(
-    private fb:FormBuilder
+    private fb:FormBuilder,
+    private data: DataService
   ) { }
 
   ngOnInit(): void {
@@ -20,7 +23,14 @@ export class TodoAddComponent implements OnInit {
       createdAt: ['', [Validators.required]],
       priority: ['', [Validators.required]],
       completed: ['']
-    })
+    });
+  }
+
+  addTodo() {
+    console.log(this.newTodo.value);
+    this.data.addNewTodo(this.newTodo.value).subscribe((res) => {
+      console.log(res);
+    });
   }
 
 }

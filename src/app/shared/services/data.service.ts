@@ -22,5 +22,8 @@ getAllTodo (): Observable<Todo[]>{
     return this.http.get<Todo>(`https://5fe21a3b7a94870017682086.mockapi.io/Todo/${id}`);
 
 }
+addNewTodo(todo: Todo): Observable<any> {
+  return this.http.post(this.urlAPI, todo);
+}
 }
 
