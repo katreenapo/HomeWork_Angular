@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { Todo } from '../shared/models/product.models';
+import { TodoService } from '../shared/service/todo.service';
 
 @Component({
   selector: 'app-todo-list',
@@ -8,36 +11,39 @@ import { Component, OnInit } from '@angular/core';
 export class TodoListComponent implements OnInit {
 
   
-  constructor() {  }
-  items: any[] = [];
-  newTask: string;
-  taskIsDone = false;
+  todo: Todo[];
 
-  addToList() {
-    if (this.newTask == '') {
-    }
-    else {
-      this.items.push({name:this.newTask,
-        taskIsDone: false
-      });
-      this.newTask = '';
-      this.taskIsDone = false;
-      }
-      console.log(this.items);
-    }
-    taskStatus() {
-      this.taskIsDone != this.taskIsDone;
-    }
+  todoForm: FormGroup;
 
-  deleteTask(index: number) {
-    this.items.splice(index, 1);
-  }
-
-  successful() {
-    
-  }
+  constructor(
+    private fb: FormBuilder,
+    private todoService: TodoService
+  ) { }
 
   ngOnInit(): void {
+    this.todoForm = this.fb.group({
+      name: ''
+    });
+    this.todo = this.todoService.getTodo();
   }
+
+  addTodo() {
+    console.log(this.todoForm.value);
+    this.todoService.addTodoStorage(this.todoForm.value);
+    this.todoForm = this.fb.group({
+      name: ''
+    });
+  }
+
+  changeTodo(event: any) {
+    console.log(event.currentTarget.checked);
+    this.todoService.changeTodo(event);
+  }
+
+  deleteTodo(i: any) {
+    this.todoService.deleteTodo(i);
+  }
+
+  
 
 }
