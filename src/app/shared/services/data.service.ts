@@ -28,5 +28,8 @@ addNewTodo(todo: Todo): Observable<any> {
 deleteTodo(id: number): Observable<any>{
   return this.http.delete<Todo>(`https://5fe21a3b7a94870017682086.mockapi.io/Todo/${id}`);
 }
+editTodo(todo: Todo, id: number): Observable<Todo> {
+  return this.http.put<Todo>(`${this.urlAPI}${id}`, todo);
+}
 }
 

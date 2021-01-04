@@ -11,26 +11,27 @@ import { DataService } from 'src/app/shared/services/data.service';
 export class TodoSingleComponent implements OnInit {
 
   todo: Todo;
-  readonly Priority = Priority;
+  id: number;
 
   constructor(
     private route: ActivatedRoute,
-    private dataService: DataService,
-    private  router: Router,
+    private data: DataService
   ) { }
-    
-
 
   ngOnInit(): void {
-    const id = +this.route.snapshot.paramMap.get('id');
-    console.log(id);
-    this.dataService.getTodoById(id).subscribe((res: Todo)=>{
+    this.id = Number(this.route.snapshot.paramMap.get('id'));
+    this.data.getTodoById(this.id).subscribe((res) => {
       this.todo = res;
     })
   }
-  allTodos() {
-    this.router.navigate(['todo']);
+
+  editTodo(todo: Todo) {
+    console.log(todo);
+    this.data.editTodo(todo, this.id).subscribe((res) => {
+      console.log(res);
+    })
   }
+
 }
   
 
