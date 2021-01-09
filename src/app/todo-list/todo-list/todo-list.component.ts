@@ -8,8 +8,8 @@ import { DataService } from 'src/app/shared/services/data.service';
   styleUrls: ['./todo-list.component.scss']
 })
 export class TodoListComponent implements OnInit {
-  todos: Todo[];
 
+  todos: Todo[];
 
   constructor(
     private data: DataService
@@ -18,8 +18,12 @@ export class TodoListComponent implements OnInit {
   ngOnInit(): void {
     this.data.getAllTodo().subscribe((res) => {
       this.todos = res;
-    console.log(res)
+      console.log(res);
     });
   }
 
+  deleteTodo(i: number) {
+    console.log(i);
+    this.todos.splice(i, 1);
+  }
 }

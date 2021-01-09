@@ -3,11 +3,8 @@ import { CommonModule } from '@angular/common';
 
 import { TodoSingleRoutingModule } from './todo-single-routing.module';
 import { TodoSingleComponent } from './todo-single/todo-single.component';
-import { FormsModule } from '@angular/forms';
-import {MatProgressBarModule} from '@angular/material/progress-bar';
-import {Component} from '@angular/core';
-
-
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatButtonModule } from '@angular/material/button';
 
 
 @NgModule({
@@ -15,9 +12,8 @@ import {Component} from '@angular/core';
   imports: [
     CommonModule,
     TodoSingleRoutingModule,
-    FormsModule,
     MatProgressBarModule,
-    Component
+    MatButtonModule
   ]
 })
 export class TodoSingleModule { }
