@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Form, FormBuilder, FormGroup, Validators } from '@angular/forms';
+
 import { Todo } from 'src/app/shared/models/service/todo.model';
 import { DataService } from 'src/app/shared/services/data.service';
 

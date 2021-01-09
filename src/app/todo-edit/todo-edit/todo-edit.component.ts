@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Todo } from 'src/app/shared/models/service/todo.model';
-
 import { DataService } from 'src/app/shared/services/data.service';
 
 @Component({
