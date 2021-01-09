@@ -5,6 +5,7 @@ import { TodoAddRoutingModule } from './todo-add-routing.module';
 import { TodoAddComponent } from './todo-add/todo-add.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
+import { TodoFormModule } from '../shared/todo-form/todo-form.module';
 
 
 
@@ -15,6 +16,7 @@ import {MatInputModule} from '@angular/material/input';
     TodoAddRoutingModule,
     ReactiveFormsModule,
     MatInputModule,
+    TodoFormModule
     
     
   ]
